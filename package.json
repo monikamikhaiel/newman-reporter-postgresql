@@ -1,34 +1,21 @@
 {
-  "name": "newman-reporter-sql",
-  "version": "1.0.15",
-  "description": "Newman Reporter for SQL based on https://github.com/vs4vijay/newman-reporter-influxdb",
+  "author": "monika",
+  "deprecated": false,
+  "description": "This package based on [tomaszsluszniak/newman-reporter-sql;](https://github.com/tomaszsluszniak/newman-reporter-sql#readme). It was customized to work with multiple SQL Engines such `MySQL`, `MariaDB`, `PostgreSQL` and `Microsoft SQL Server` i just added httprequestid for my personal usage.",
+  "devDependencies": {},
+  "license": "MIT",
   "main": "src/index.js",
+  "name": "newman-reporter-psgl",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "version": "1.0.8",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/tomaszsluszniak/newman-reporter-sql"
+    "url": "git+https://github.com/monikamikhaiel/newman-reporter-postgresql.git"
   },
-  "keywords": [
-    "newman",
-    "reporter",
-    "sql",
-    "sequelize",
-    "postman",
-    "tedious",
-    "api",
-    "api testing",
-    "testing",
-    "test"
-  ],
-  "author": "Tomasz Słuszniak (tomasz.sluszniak@gmail.com)",
-  "license": "MIT",
   "bugs": {
-    "url": "https://github.com/tomaszsluszniak/newman-reporter-sql/issues"
+    "url": "https://github.com/monikamikhaiel/newman-reporter-postgresql/issues"
   },
-  "homepage": "https://github.com/tomaszsluszniak/newman-reporter-sql#readme",
-  "dependencies": {
-    "sequelize": "^6.3.5"
-  }
+  "homepage": "https://github.com/monikamikhaiel/newman-reporter-postgresql#readme"
 }

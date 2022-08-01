@@ -126,9 +126,32 @@ class SQLReporter {
     const { cursor, item, request } = args;
 
     console.log(`[${this.context.currentItem.index}] Running ${item.name}`);
+  //   var collec_name;
+  //   if (args.request.headers){
+  //     collec_name=JSON.parse(data.request.headers)[0]['key']=="From"? JSON.parse(data.request.headers)[0]['value']: this.options.collection.name;
+  //     //console.log(collec_name)
+  //     collec_name=JSON.stringify(collec_name);
+  //  }
+  //  else {
+  //   collec_name=this.options.collection.name
+  //  }
+  var collec_name;
+  //console.log(data.request.headers.reference)
+  if (args.request.headers.reference['from'] ){
+   // collec_name=(JSON.parse(data.request.headers)[0])
+    //? JSON.parse(data.request.headers)[0]['value']: null;
+   collec_name=args.request.headers.reference['from'].toString().replace('PostmanHeader','');
+    //console.log(collec_name.split(':')[1]);
+    //console.log(typeof(collec_name));
+    collec_name=this.options.collection.name+(collec_name.split(':')[1]).toString();
+    
+ }
+ else{
+  collec_name=this.options.collection.name;
 
+ }
     const data = {
-      collection_name: this.options.collection.name, 
+      collection_name: collec_name, 
       request_name: item.name,
       test_name: this.context.test_name,
       url: request.url.toString(),
