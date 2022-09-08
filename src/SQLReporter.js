@@ -101,6 +101,7 @@ class SQLReporter {
         skipped: { type: DataTypes.TEXT, allowNull: false },
         iteration: { type: DataTypes.INTEGER, allowNull: true },
         newman_thread: { type: DataTypes.UUID, allowNull: true },
+        httprequestid: { type: DataTypes.UUID, allowNull: true }
       }, {
         tableName: this.context.table
       });
@@ -168,7 +169,8 @@ class SQLReporter {
       failed: '',
       skipped: '',
       iteration: cursor.iteration + 1,
-      newman_thread: this.options.globals.id
+      newman_thread: this.options.globals.id,
+      httprequestid: args.cursor.httpRequestId ? args.cursor.httpRequestId : null
     };
 
     this.context.currentItem.data = data;
